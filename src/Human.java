@@ -4,8 +4,19 @@ public class Human {
     private String town;
 
     public Human(int birthYear, String name, String town){
+        if(yearOfBirth < 0){
+            yearOfBirth = 0;
+        }
         yearOfBirth = birthYear;
+
+        if(name == null || name.equals(" ")){
+            name = "Информация не указана";
+        }
         this.name = name;
+
+        if(town == null || town.equals(" ")){
+            town = "Информация не указана";
+        }
         this.town = town;
     }
 
