@@ -2,8 +2,9 @@ public class Human {
     private int yearOfBirth;
     private String name;
     private String town;
+    private String job;
 
-    public Human(int birthYear, String name, String town){
+    public Human(int birthYear, String name, String town, String job){
         if(yearOfBirth < 0){
             yearOfBirth = 0;
         }
@@ -18,13 +19,17 @@ public class Human {
             town = "Информация не указана";
         }
         this.town = town;
+        if(job == null || job.equals(" ")){
+            job = "Информация не указана";
+        }
+        this.job = job;
     }
 
     @Override
     public String toString(){
         return "Привет! Меня зовут " + this.name +
                 ". Я из города " + this.town + ". Я родился в " + this.yearOfBirth
-                + " году. Будем знакомы!";
+                + " году." + " Я работаю на должности " + this.job +  "Будем знакомы!";
     }
 
 }
